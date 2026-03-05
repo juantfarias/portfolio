@@ -1,0 +1,27 @@
+# A versão da sintaxe do docker-compose
+version: '3.8'
+
+services:
+  # Nome do nosso serviço de banco de dados
+  db:
+    # A imagem oficial do PostgreSQL que o Docker vai baixar
+    image: postgres:16
+    # Nome que o contêiner terá no seu Docker
+    container_name: portfolio-postgres
+    # Sempre reinicia o banco se o Docker reiniciar
+    restart: always
+    # Variáveis de ambiente para configurar o Postgres
+    environment:
+      POSTGRES_USER: admin           # Seu usuário do banco
+      POSTGRES_PASSWORD: admin       # Sua senha do banco
+      POSTGRES_DB: portfolio_db      # O nome do banco de dados que será criado
+    # Mapeamento de portas (Porta do seu PC : Porta de dentro do contêiner)
+    ports:
+      - "5433:5432"
+    # Volumes servem para não perder os dados se o contêiner for apagado
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+# Declaração do volume que criamos acima
+volumes:
+  postgres_data:

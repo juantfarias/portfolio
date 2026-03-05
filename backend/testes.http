@@ -1,0 +1,12 @@
+### Cadastrar um novo projeto
+POST http://localhost:8080/api/projects
+Content-Type: application/json
+
+{
+  "title": "Sistema de Gestão Interna (Fechado)",
+  "description": "Uma plataforma Full Stack desenvolvida para otimizar os processos internos da empresa. Foco em performance e segurança.",
+  "technologies": "Java, Spring Boot, SQL",
+  "routePath": "/projetos/gestao-interna",
+  "repositoryUrl": "",
+  "imageUrl": "link-da-imagem.png"
+}
