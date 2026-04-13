@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Code2 } from "lucide-react"
+import { Github, Linkedin, Mail, Phone, Code2 } from "lucide-react"
 
 export function Footer() {
   return (
@@ -39,6 +39,13 @@ export function Footer() {
             aria-label="Email"
           >
             <Mail className="h-4 w-4" />
+          </a>
+          <a
+            href="tel:+5562994800586"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+            aria-label="Telefone"
+          >
+            <Phone className="h-4 w-4" />
           </a>
         </div>
 

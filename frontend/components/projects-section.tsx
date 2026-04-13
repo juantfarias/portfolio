@@ -18,12 +18,15 @@ export function ProjectsSection() {
   // 2. Variável de estado para guardar os projetos que vierem do banco
   const [projects, setProjects] = useState<Project[]>([]);
 
+  const [loading, setLoading] = useState(true);
+
   // 3. Chamada para a nossa API Spring Boot
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects`)
       .then((response) => response.json())
       .then((data) => setProjects(data))
-      .catch((error) => console.error("Erro ao buscar projetos:", error));
+      .catch((error) => console.error("Erro ao buscar projetos:", error))
+      .finally(() => setLoading(false));
   }, []);
 
   return (
@@ -35,6 +38,19 @@ export function ProjectsSection() {
         <h2 className="mb-12 max-w-2xl text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           {"Soluções que construí"}
         </h2>
+
+        {loading && (
+          <div className="flex items-center justify-center py-16">
+            <div className="h-8 w-8 animate-spin rounded-full border-2 border-border border-t-primary" />
+          </div>
+        )}
+
+        {!loading && projects.length === 0 && (
+          <div className="flex flex-col items-center justify-center rounded-xl border border-border/60 bg-card py-16 text-center">
+            <FolderGit2 className="mb-4 h-10 w-10 text-muted-foreground/40" />
+            <p className="text-sm text-muted-foreground">{"Projetos em breve."}</p>
+          </div>
+        )}
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {/* 4. Fazemos o loop nos dados reais do Java */}

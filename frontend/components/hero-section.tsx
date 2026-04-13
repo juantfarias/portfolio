@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowDown, Download, Github, Linkedin, Mail, Phone } from "lucide-react"
 
 export function HeroSection() {
   return (
@@ -21,11 +21,11 @@ export function HeroSection() {
         </h1>
 
         <p className="mt-4 text-lg font-medium text-primary sm:text-xl">
-          {"Desenvolvedor Full Stack"}
+          {"Desenvolvedor Full Stack & Analista de Sistemas"}
         </p>
 
         <p className="mx-auto mt-6 max-w-xl text-pretty leading-relaxed text-muted-foreground">
-          {"Construo sistemas corporativos seguros, escaláveis e de alta performance. Especialista em transformar requisitos complexos em soluções elegantes."}
+          {"Bacharel em Ciência da Computação, com experiência em sistemas web usando React, TypeScript, FastAPI, Python e Java. Antes de codar, mapeei processos, documentei fluxos e criei dashboards em Power BI — o que me dá uma visão de negócio que vai além do código. Entrego soluções escaláveis, bem estruturadas e alinhadas com o que o negócio realmente precisa."}
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -40,6 +40,14 @@ export function HeroSection() {
             className="inline-flex items-center gap-2 rounded-lg border border-border bg-secondary/50 px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
           >
             {"Entrar em Contato"}
+          </a>
+          <a
+            href="/cv-juan-farias.pdf"
+            download
+            className="inline-flex items-center gap-2 rounded-lg border border-primary/40 bg-primary/10 px-6 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
+          >
+            <Download className="h-4 w-4" />
+            {"Download CV"}
           </a>
         </div>
 
@@ -68,6 +76,13 @@ export function HeroSection() {
             aria-label="Email"
           >
             <Mail className="h-5 w-5" />
+          </a>
+          <a
+            href="tel:+5562994800586"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+            aria-label="Telefone"
+          >
+            <Phone className="h-5 w-5" />
           </a>
         </div>
 

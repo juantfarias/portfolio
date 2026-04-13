@@ -5,6 +5,7 @@ import { Code2, Menu, X } from "lucide-react"
 
 const navLinks = [
   { label: "Sobre", href: "#sobre" },
+  { label: "Experiência", href: "#experiencia" },
   { label: "Projetos", href: "#projetos" },
   { label: "Contato", href: "#contato" },
 ]
@@ -17,7 +18,7 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#" className="flex items-center gap-2 text-foreground transition-colors hover:text-primary">
           <Code2 className="h-5 w-5 text-primary" />
-          <span className="text-lg font-semibold tracking-tight">{"JuanFullStack"}</span>
+          <span className="text-lg font-semibold tracking-tight">{"Juan Farias"}</span>
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">

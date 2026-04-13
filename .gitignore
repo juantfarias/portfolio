@@ -1,3 +1,12 @@
+# Claude / AI agents
+CLAUDE.md
+.claude/
+.agent/
+.agents/
+**/.claude/
+**/.agent/
+**/.agents/
+
 # Arquivos de ambiente
 .env
 .env.*
